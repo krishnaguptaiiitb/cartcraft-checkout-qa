@@ -1,62 +1,72 @@
-# CartCraft — Test Execution Results
+# CartCraft — Verified Test Results
 
-## Observed automated results (screenshots supplied by project owner)
+**As of:** 21 November 2026  
+**Primary environment:** Chromium / Playwright  
+**CI:** GitHub Actions `CartCraft Quality Gate #1`, branch `main`, commit `5e604c7`
 
-| Run | Date | Browser | Cases visible | Observed status | Evidence |
-|---|---|---|---|---|---|
-| Initial checkout suite | Nov 21, 2026 | Chromium | A01–A08 | 8 tests marked passed; report header showed 0 failed / 0 flaky / 0 skipped | `evidence/automation-a01-a08-original.png` |
-| Post-hardening regression | Nov 21, 2026 | Chromium | A01–A08 | All 8 listed tests marked passed | `evidence/automation-a01-a08-regression.png` |
-| Extended quality suite | Nov 21, 2026 | Chromium | A09–A16 | All 8 listed tests marked passed | `evidence/automation-a09-a16-quality.png` |
+## Executive test summary
 
-**Latest observed A01–A16 evidence: 16 green/passed test entries across the two newly supplied screenshots.** These are local browser results, not GitHub CI results. The new screenshots do not show the full aggregate report header; consequently, this report does not assume additional unseen tests or metrics.
-
-## Detailed latest automated results
-
-| ID | Status | What was checked |
+| Verification | Actual observation | Evidence |
 |---|---|---|
-| A01 | PASS | Valid order, one confirmation and reference |
-| A02 | PASS | Name required; cart preserved |
-| A03 | PASS | Exact quantity and order totals |
-| A04 | PASS | Empty cart blocked; name preserved |
-| A05 | PASS | Double synchronous submit yields one confirmation |
-| A06 | PASS | Invalid/valid promo calculations |
-| A07 | PASS | Remove and re-add products |
-| A08 | PASS | Starting another order resets state |
-| A09 | PASS | Rapid quantity events and 99 cap |
-| A10 | PASS | Spaces-only name validation |
-| A11 | PASS | Dynamic promo recalculation |
-| A12 | PASS | Mobile 375px flow without overflow |
-| A13 | PASS | Skip link, keyboard submit, confirmation focus |
-| A14 | PASS | Error clearance after fixing inputs |
-| A15 | PASS | ARIA association for promo validation |
-| A16 | PASS | State reset after reload |
+| Original browser suite (A01–A08) | 8 passed, 0 failed, 0 flaky, 0 skipped (31.1s) | `evidence/automation-a01-a08-original.png` |
+| Post-quality local checks (A01–A08) | 8 named tests passed | `evidence/automation-a01-a08-regression.png` |
+| Expanded local checks (A09–A16) | 8 named tests passed | `evidence/automation-a09-a16-quality.png` |
+| GitHub CI — Chromium suite (A01–A16) | **16 passed (18.8s), 1 worker, 0 retries** | `evidence/ci-chromium-16-passed.txt` |
+| GitHub CI — production build | Step *Typecheck and production build* succeeded | `evidence/ci-job-steps-success.png` |
+| GitHub CI — HTML report & raw artifacts | Both upload steps succeeded | `evidence/ci-job-steps-success.png` |
+| GitHub workflow | Successful, 58s overall; build-and-test job screenshot shows 51s | `evidence/ci-workflow-success.png`, `evidence/ci-job-steps-success.png` |
 
-## Required manual execution — results still need to be confirmed
+**Interpretation:** All 16 automated scenarios are verified as passed in a remote CI run, not just locally. This is **not** a claim of defect-free software, production payments, or cross-browser coverage. The CI log is a user-pasted transcript recorded faithfully by test title and timing, not a synthetic execution. See the original workflow or its uploaded Playwright HTML artifact for independent verification.
 
-The owner reported that **both manual tests were run**. The actual observations, PASS/FAIL results, and screenshots were not shared; therefore they remain **EXECUTED — OUTCOME UNCONFIRMED** rather than being marked passed.
+## Case-by-case observed CI status
 
-| ID | Priority | Execution | Result | Actual observation | Screenshot |
+| ID | Status | Scenario |
+|---|---|---|
+| A01 | PASS | Successful checkout, one confirmation and reference |
+| A02 | PASS | Missing required name blocks and retains cart |
+| A03 | PASS | Quantity updates exact line and order total |
+| A04 | PASS | Empty-cart validation; typed name retained |
+| A05 | PASS | Repeated synchronous submit gives one confirmation |
+| A06 | PASS | Invalid/valid promotional code handling |
+| A07 | PASS | Removing and re-adding a product |
+| A08 | PASS | New-order state reset |
+| A09 | PASS | Rapid quantity events and upper boundary 99 |
+| A10 | PASS | Whitespace-only name validation and data retention |
+| A11 | PASS | Promo recomputation after quantity changes |
+| A12 | PASS | 375px mobile layout without horizontal overflow |
+| A13 | PASS | Keyboard skip link and Enter checkout |
+| A14 | PASS | Error clearing once inputs corrected |
+| A15 | PASS | Accessible promo error association |
+| A16 | PASS | Independent cart on fresh navigation |
+
+## Required manual scenarios — outcomes still unverified
+
+The project owner reported **running both** required manual checks. Neither actual observations nor PASS/FAIL confirmation has been provided. **Do not mark either PASS solely because A04 and A05 passed.**
+
+| ID | Manual scenario | Execution | Result | Actual observation | Screenshot |
 |---|---|---|---|---|---|
-| M01 empty-cart interaction | P0 | User says executed | OUTCOME UNCONFIRMED | **Fill in what was seen** | `evidence/manual-empty-cart.png` (not provided) |
-| M02 rapid physical double-click | P0 | User says executed | OUTCOME UNCONFIRMED | **Fill in whether exactly one reference appeared** | `evidence/manual-double-click.png` (not provided) |
+| M01 | Empty-cart attempt with customer name entered | Reported run | **Outcome unconfirmed** | To be recorded by tester | Not provided |
+| M02 | Rapid physical double-click on Place order | Reported run | **Outcome unconfirmed** | To be recorded by tester | Not provided |
 
-### Manual execution record to complete
+### Manual execution form
 
-- M01 actual: ______________________________
-- M01 result (PASS/FAIL): ___________________
-- M02 actual: ______________________________
-- M02 result (PASS/FAIL): ___________________
-- Test environment and timestamp: __________
-- Screenshot files attached: ________________
+- Browser and OS:
+- Date and time:
+- M01 actual behavior:
+- M01 result (PASS/FAIL):
+- M01 evidence filename (if available):
+- M02 actual behavior:
+- M02 result (PASS/FAIL):
+- M02 evidence filename (if available):
 
-## CI execution
+If either result was FAIL, add an authentic defect report with steps, expected behavior, actual behavior, and the supporting evidence. Do not invent a failure to fill the template.
 
-| Check | Current status |
-|---|---|
-| GitHub Actions workflow file | Provided in Step 6 |
-| Remote GitHub CI run | NOT YET RUN / NOT VERIFIED |
-| Local `npm run build` after Step 6 | Awaiting confirmation |
+## Known warnings and boundaries
+
+- The CI job screenshot includes **one non-blocking annotation** concerning deprecation of Node.js 20 for an action. CI and tests passed; the action/dependency causing the warning should be identified before making a targeted update.
+- Browser automation currently covers Chromium. Firefox and WebKit have not been shown passing.
+- The app is demo-only and client-side. Confirmation references are not backed by a server, database, or global uniqueness mechanism.
 
 ## Defects
 
-No defects are *demonstrated by the 16 passed automated cases*. Manual outcomes are not yet documented, and this is not a claim that the entire application is defect-free. Only report defects for which actual failing behavior and reproducing evidence exist.
+No actual failing product behavior has been demonstrated in the provided automated evidence. Manual results are not yet fully documented; the defect count cannot be asserted as universally zero.

@@ -1,0 +1,33 @@
+CartCraft — GitHub Actions: Chromium Playwright output
+Source: owner-pasted GitHub Actions job log, 21 November 2026
+This text is a user-provided transcript, not a generated browser run.
+
+Run npm run test:e2e -- --project=chromium --workers=1 --retries=0
+
+> cartcraft@0.0.0 test:e2e
+> playwright test --project=chromium --workers=1 --retries=0
+
+Running 16 tests using 1 worker
+
+  PASS  1 [chromium] tests/checkout.spec.ts:27:1 — A01: a valid order displays one confirmation and a reference (1.7s)
+  PASS  2 [chromium] tests/checkout.spec.ts:44:1 — A02: missing required name blocks checkout without changing the cart (692ms)
+  PASS  3 [chromium] tests/checkout.spec.ts:57:1 — A03: increasing quantity changes the exact line and order totals (758ms)
+  PASS  4 [chromium] tests/checkout.spec.ts:73:1 — A04: an empty cart is blocked and an entered name is preserved (1.7s)
+  PASS  5 [chromium] tests/checkout.spec.ts:89:1 — A05: repeated synchronous submits still produce only one confirmation (729ms)
+  PASS  6 [chromium] tests/checkout.spec.ts:107:1 — A06: invalid promo does not change totals; a valid promo applies 10% (1.2s)
+  PASS  7 [chromium] tests/checkout.spec.ts:125:1 — A07: a removed item can be added back and totals recover (808ms)
+  PASS  8 [chromium] tests/checkout.spec.ts:137:1 — A08: starting another order resets the cart, name, and discount (1.9s)
+  PASS  9 [chromium] tests/quality.spec.ts:9:1 — A09: rapid quantity events are cumulative and capped at 99 (573ms)
+  PASS 10 [chromium] tests/quality.spec.ts:27:1 — A10: whitespace-only name cannot submit and typed value is preserved (1.5s)
+  PASS 11 [chromium] tests/quality.spec.ts:39:1 — A11: promo recalculates correctly when cart quantities change (986ms)
+  PASS 12 [chromium] tests/quality.spec.ts:50:1 — A12: phone layout keeps checkout usable without horizontal overflow (1.4s)
+  PASS 13 [chromium] tests/quality.spec.ts:66:1 — A13: keyboard skip link works and Enter submits the checkout (655ms)
+  PASS 14 [chromium] tests/quality.spec.ts:81:1 — A14: both validation errors clear after their inputs are fixed (924ms)
+  PASS 15 [chromium] tests/quality.spec.ts:99:1 — A15: promo error is connected to the input for assistive technology (1.0s)
+  PASS 16 [chromium] tests/quality.spec.ts:113:1 — A16: fresh navigation creates an independent seed cart (795ms)
+
+16 passed (18.8s)
+
+CI job screenshot: Build and Playwright (Chromium), succeeded in 51s.
+Workflow overview screenshot: CartCraft Quality Gate #1, branch main, commit 5e604c7, 58s overall.
+One nonblocking annotation warning about an action targeting deprecated Node.js 20 is visible in the job screenshot. No test failures are shown.

@@ -1,17 +1,14 @@
 # CartCraft — Evidence Manifest
 
-    All three PNGs below are unchanged copies of the screenshots supplied by the project owner on November 21, 2026. They are **Playwright result-report screenshots**, not fabricated app screenshots or CI logs. The SHA-256 values allow reviewers to check file integrity.
+All screenshot image files are **unaltered copies of user-supplied evidence**. The CI text log is a transcription of output pasted in chat, not an image or freshly executed run. Hashes are SHA-256 of included files.
 
-    | File | What it actually shows | SHA-256 |
-    |---|---|---|
-    | [`automation-a01-a08-original.png`](automation-a01-a08-original.png) | Initial A01–A08 run: 8 passed, 0 failed, 0 flaky, 0 skipped (31.1s). | `09b240f8e865f5057bcd7690865d37cc5b423b5a8409ba0c011beb5287a5a840` |
-| [`automation-a01-a08-regression.png`](automation-a01-a08-regression.png) | Latest A01–A08 run: eight named tests with green pass indicators. | `ddc712f342fdcd71cd92357b88efffec48ee2cfc8f3dc7959083b6517f17d277` |
-| [`automation-a09-a16-quality.png`](automation-a09-a16-quality.png) | Latest A09–A16 run: eight named tests with green pass indicators. | `04b50049100110e41d7ae4ab7b6a6bb7d0492545aa7d5c634500009a5efbd037` |
+| File | Evidence | SHA-256 |
+|---|---|---|
+| `automation-a01-a08-original.png` | Initial local Playwright report, eight tests passed | `09b240f8e865f5057bcd7690865d37cc5b423b5a8409ba0c011beb5287a5a840` |
+| `automation-a01-a08-regression.png` | Later local A01–A08 regression tests, all green | `ddc712f342fdcd71cd92357b88efffec48ee2cfc8f3dc7959083b6517f17d277` |
+| `automation-a09-a16-quality.png` | Later local A09–A16 tests, all green | `04b50049100110e41d7ae4ab7b6a6bb7d0492545aa7d5c634500009a5efbd037` |
+| `ci-workflow-success.png` | GitHub Actions overview green success, commit 5e604c7 | `89d5aecb863cf88c8f223c57084efbb9d91c711563326a7bca0268200c8d2056` |
+| `ci-job-steps-success.png` | Successful GitHub build, browser test, report upload steps | `c5d9d6e9834a849cc2d772dcf4315ae260236e37a10f09f24798e9efcdb4b415` |
+| `ci-chromium-16-passed.txt` | Transcription of owner-pasted CI run log: 16 passed (18.8s) | `9a6fb082408f152488b838ac19ed532f9d4a521544e08c06a934d66f797ce864` |
 
-
-## Result interpretation
-
-- The two latest screenshots together show **all 16 named browser checks passing** in local Chromium.
-- The initial run separately shows all eight base tests passed and includes aggregate counts.
-- These images do **not** prove successful future GitHub Actions execution, nor supply actual M01/M02 manual outcomes.
-- Additional evidence should be captured honestly and placed alongside these files; do not overwrite the original screenshots.
+Manual M01/M02 result screenshots have not been supplied. Do not treat automated coverage as proof of the required manual results.

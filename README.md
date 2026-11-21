@@ -56,23 +56,20 @@ npx playwright test --headed --project=chromium
 
 All tests begin with a fresh isolated browser context and seed cart. The test runner uses visibility and text assertions, not fixed timeouts.
 
-## Quality and evidence
+## Verified quality and evidence
 
-| Evidence | Scope | Result visible in screenshot |
-|---|---|---|
-| [Original run](evidence/automation-a01-a08-original.png) | A01–A08 | All eight green |
-| [Regression run](evidence/automation-a01-a08-regression.png) | A01–A08 after quality upgrade | All eight green |
-| [Expanded run](evidence/automation-a09-a16-quality.png) | A09–A16 | All eight green |
+All **16 automated scenarios** passed in a GitHub Actions Chromium run on **21 November 2026**: **16 passed (18.8s), one worker, zero retries**. The CI job also shows a successful TypeScript/production build and upload of the Playwright HTML report and raw results. Local screenshots show the earlier eight-test run and the expanded suite's individual green results.
 
-**16 automated cases visibly passed in the latest two submitted screenshots (November 21, 2026).** This is evidence from local Chromium, *not* proof of a future GitHub Actions run. Original screenshot assets are supplied unchanged.
+- [TEST-PLAN.md](TEST-PLAN.md) — risk-ranked A01–A16 and M01–M02.
+- [TEST-RESULTS.md](TEST-RESULTS.md) — detailed **observed** local and remote results.
+- [evidence/EVIDENCE-MANIFEST.md](evidence/EVIDENCE-MANIFEST.md) — original screenshots and CI transcript, with checksums.
+- [FINAL-SUBMISSION.md](FINAL-SUBMISSION.md) — submission and reproduction checklist.
 
-For exact priorities, steps, expected outcomes, and evidence, read [TEST-PLAN.md](TEST-PLAN.md), [TEST-RESULTS.md](TEST-RESULTS.md), and [evidence/EVIDENCE-MANIFEST.md](evidence/EVIDENCE-MANIFEST.md).
-
-Manual tests M01 (empty cart) and M02 (rapid physical mouse double-click) were reported as **performed**, but pass/fail outcomes and screenshots were not supplied. They are not asserted as passed here.
+**Manual testing:** M01 (empty cart) and M02 (physical mouse double-click) were reported as run, but their outcomes and screenshots have not been supplied. The automation results do not replace those manual observations.
 
 ## CI: automatic quality gate
 
-`.github/workflows/quality-gate.yml` runs on pushes, pull requests, and manual dispatch. It installs the lockfile dependencies and Chromium, checks the production build, executes Playwright in **one worker without retries**, and uploads the HTML report and test-results as artifacts. See [STEP6-INSTRUCTIONS.md](STEP6-INSTRUCTIONS.md) for GitHub setup and how to inspect results.
+`.github/workflows/quality-gate.yml` runs for pushes, pull requests, and manual dispatch. It installs dependencies and Chromium, executes the production build and **all 16 Chromium tests with `--workers=1 --retries=0`**, and uploads HTML and raw reports as artifacts. A GitHub Actions run for commit `5e604c7` passed. The job screenshot includes one **non-blocking action/runtime deprecation warning**; it does not indicate a test failure.
 
 ## Repository layout
 
@@ -111,4 +108,4 @@ cartcraft/
 3. Attempt checkout without a name; verify the message and unchanged cart.
 4. Enter a name and submit; show the confirmation and single order reference.
 5. Run `npm run test:e2e`; open the Playwright report and the checked-in evidence.
-6. Show the GitHub Actions **Quality Gate** result once it has actually passed.
+6. Show the verified GitHub Actions **CartCraft Quality Gate #1** run, the 16-pass log, and the published test artifacts.
