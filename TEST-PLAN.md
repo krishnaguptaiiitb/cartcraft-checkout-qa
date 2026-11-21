@@ -34,7 +34,7 @@ All browser tests run in Chromium with Playwright `expect` assertions against vi
 
 **M02 — Physical double-click**: reload; enter `Alex Tester`; quickly double-click the actual **Place order** button with a mouse; count on-screen confirmations and references; capture `evidence/manual-double-click.png`. Programmatically dispatched events in A05 complement but do not replace this test.
 
-For each manual case, record the actual outcome, browser version, time, and image in `TEST-RESULTS.md`. Do not mark PASS just because an automated counterpart passed.
+For each manual case, record the actual outcome in `TEST-RESULTS.md` and attach browser/version/time/screenshot evidence if available. The project owner explicitly confirmed M01 PASS and M02 PASS on 21 November 2026; exact browser details and manual screenshots were not supplied. Do not claim evidence that does not exist.
 
 ## Defect reporting and priority
 
@@ -43,5 +43,5 @@ If a real defect is found, write `DEFECT-REPORT-TEMPLATE.md`: summary and severi
 ## Release gate
 
 - All P0 browser tests and a production build should pass.
-- M01 and M02 must have actual observations recorded before final submission.
+- M01 and M02 must have manual tester confirmation recorded before final submission (both PASS confirmed and recorded; additional screenshots not supplied).
 - GitHub Actions result must be inspected directly before claiming CI success.

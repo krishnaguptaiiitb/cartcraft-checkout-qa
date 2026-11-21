@@ -65,7 +65,7 @@ All **16 automated scenarios** passed in a GitHub Actions Chromium run on **21 N
 - [evidence/EVIDENCE-MANIFEST.md](evidence/EVIDENCE-MANIFEST.md) — original screenshots and CI transcript, with checksums.
 - [FINAL-SUBMISSION.md](FINAL-SUBMISSION.md) — submission and reproduction checklist.
 
-**Manual testing:** M01 (empty cart) and M02 (physical mouse double-click) were reported as run, but their outcomes and screenshots have not been supplied. The automation results do not replace those manual observations.
+**Manual testing:** The project owner confirmed **M01 PASS** (empty-cart protection) and **M02 PASS** (rapid physical double-click, one confirmation). Both results are recorded in [TEST-RESULTS.md](TEST-RESULTS.md) and [the owner’s manual outcome statement](evidence/MANUAL-TEST-CONFIRMATION.md). Manual screenshots were not provided. The automated cases do not substitute for the owner’s separate manual confirmation.
 
 ## CI: automatic quality gate
 

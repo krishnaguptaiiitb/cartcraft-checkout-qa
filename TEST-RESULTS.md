@@ -15,6 +15,8 @@
 | GitHub CI — production build | Step *Typecheck and production build* succeeded | `evidence/ci-job-steps-success.png` |
 | GitHub CI — HTML report & raw artifacts | Both upload steps succeeded | `evidence/ci-job-steps-success.png` |
 | GitHub workflow | Successful, 58s overall; build-and-test job screenshot shows 51s | `evidence/ci-workflow-success.png`, `evidence/ci-job-steps-success.png` |
+| M01 manual empty-cart check | **PASS — owner confirmed** | `evidence/MANUAL-TEST-CONFIRMATION.md` |
+| M02 manual rapid double-click check | **PASS — owner confirmed** | `evidence/MANUAL-TEST-CONFIRMATION.md` |
 
 **Interpretation:** All 16 automated scenarios are verified as passed in a remote CI run, not just locally. This is **not** a claim of defect-free software, production payments, or cross-browser coverage. The CI log is a user-pasted transcript recorded faithfully by test title and timing, not a synthetic execution. See the original workflow or its uploaded Playwright HTML artifact for independent verification.
 
@@ -39,27 +41,18 @@
 | A15 | PASS | Accessible promo error association |
 | A16 | PASS | Independent cart on fresh navigation |
 
-## Required manual scenarios — outcomes still unverified
+## Required manual scenarios — confirmed by the tester
 
-The project owner reported **running both** required manual checks. Neither actual observations nor PASS/FAIL confirmation has been provided. **Do not mark either PASS solely because A04 and A05 passed.**
+The project owner explicitly reported **M01 PASS and M02 PASS** on 21 November 2026. These are **manual test results confirmed by the tester**, not automated test outcomes or independent screenshot verification. The acceptance criteria below come from `TEST-PLAN.md`; no more detailed manual observations were supplied.
 
-| ID | Manual scenario | Execution | Result | Actual observation | Screenshot |
-|---|---|---|---|---|---|
-| M01 | Empty-cart attempt with customer name entered | Reported run | **Outcome unconfirmed** | To be recorded by tester | Not provided |
-| M02 | Rapid physical double-click on Place order | Reported run | **Outcome unconfirmed** | To be recorded by tester | Not provided |
+| ID | Scenario | Result | Acceptance criteria covered by the owner's PASS confirmation | Evidence | 
+|---|---|---|---|---|
+| M01 | Empty cart with name entered, attempt checkout | **PASS (owner-reported)** | Empty cart is blocked, validation is visible, and entered name is retained | `evidence/MANUAL-TEST-CONFIRMATION.md` |
+| M02 | Rapid physical mouse double-click of **Place order** | **PASS (owner-reported)** | Exactly one order confirmation and one reference appear | `evidence/MANUAL-TEST-CONFIRMATION.md` |
 
-### Manual execution form
+**Manual evidence limitations:** The tester has not supplied manual screenshots, exact browser version, execution timestamps, or a step-by-step observation log. Do not create fake screenshot references or represent the owner's confirmation as a separate browser recording. The original tester confirmation is transcribed verbatim in `evidence/MANUAL-TEST-CONFIRMATION.md`.
 
-- Browser and OS:
-- Date and time:
-- M01 actual behavior:
-- M01 result (PASS/FAIL):
-- M01 evidence filename (if available):
-- M02 actual behavior:
-- M02 result (PASS/FAIL):
-- M02 evidence filename (if available):
-
-If either result was FAIL, add an authentic defect report with steps, expected behavior, actual behavior, and the supporting evidence. Do not invent a failure to fill the template.
+**Manual defect disposition:** The tester reported both cases passed; no defect was reported for M01 or M02. If subsequent testing uncovers an issue, create a defect record with real reproduction steps and evidence.
 
 ## Known warnings and boundaries
 
@@ -69,4 +62,4 @@ If either result was FAIL, add an authentic defect report with steps, expected b
 
 ## Defects
 
-No actual failing product behavior has been demonstrated in the provided automated evidence. Manual results are not yet fully documented; the defect count cannot be asserted as universally zero.
+No product defect was observed in the provided 16-test automated run, and the tester reported both required manual checks as PASS. **Defects reported from the documented runs: 0.** This is not a claim that the product is defect-free under all conditions. The non-blocking CI deprecation annotation is recorded as an infrastructure warning, not a product defect.

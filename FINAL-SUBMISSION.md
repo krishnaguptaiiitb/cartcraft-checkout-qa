@@ -1,6 +1,6 @@
 # Final CartCraft Submission — Release Checklist
 
-**Status:** Automated checks and CI verified. Two required manual outcomes still need owner confirmation.
+**Status: READY FOR SUBMISSION** — all 16 automated CI checks passed, the production build passed, and both required manual checks were confirmed PASS by the project owner. Manual screenshots were not supplied.
 
 ## Submission contents
 
@@ -46,11 +46,11 @@ Then open `http://localhost:5173/`.
 - [x] Successful CI TypeScript check and production build.
 - [x] Successful CI Playwright HTML report upload.
 - [x] Evidence assets bundled and indexed.
-- [ ] **Confirm and record manual M01 actual result (PASS/FAIL).**
-- [ ] **Confirm and record manual M02 actual result (PASS/FAIL).**
-- [ ] Attach manual screenshots if they exist; do not represent absent screenshots as provided.
-- [ ] Update `TEST-RESULTS.md` with these *actual* observations before final submission.
-- [ ] Commit and push updated documentation/evidence.
+- [x] **M01 PASS — confirmed by the manual tester.**
+- [x] **M02 PASS — confirmed by the manual tester.**
+- [x] Manual outcomes recorded accurately in `TEST-RESULTS.md`; original owner confirmation preserved as text in `evidence/MANUAL-TEST-CONFIRMATION.md`.
+- [ ] Optional: attach actual manual screenshots *if available*; none were supplied, so the submission does not claim they exist.
+- [ ] Commit and push this final documentation/evidence update to GitHub.
 
 ## Short evaluator walkthrough
 
@@ -60,8 +60,8 @@ Then open `http://localhost:5173/`.
 4. Fill customer name; show one confirmation with a client-generated order reference.
 5. Show the Playwright HTML report or run `npm run test:e2e`.
 6. Open GitHub Actions > CartCraft Quality Gate #1 and show all 16 tests passed with zero retries.
-7. Show M01/M02 manual results once you have recorded what actually happened.
+7. Show M01/M02 PASS outcomes in `TEST-RESULTS.md` and the tester confirmation under `evidence/`. Explain that manual screenshots were not provided.
 
 ## Evidence provenance and limits
 
-The PNG files are copies of screenshots shared by the project owner. The `ci-chromium-16-passed.txt` file is a structured transcription of the user's pasted CI log, not a fresh execution. GitHub's original logs and downloadable artifacts are the primary CI evidence. Do not claim cross-browser coverage, real payment processing, global reference uniqueness, or a universally defect-free application.
+The PNG files are copies of screenshots shared by the project owner. The `ci-chromium-16-passed.txt` file is a structured transcription of the user's pasted CI log, not a fresh execution. The manual PASS statements are a verbatim transcription of owner-reported results, not independently inspected manual browser screenshots. GitHub's original logs and downloadable artifacts are the primary CI evidence. Do not claim cross-browser coverage, real payment processing, global reference uniqueness, or a universally defect-free application.
