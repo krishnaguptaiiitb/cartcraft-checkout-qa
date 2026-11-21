@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 380" role="img" aria-labelledby="title">
+<title id="title">Graphite studio headphones</title>
+<defs>
+  <linearGradient id="headband" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#515061"/><stop offset=".42" stop-color="#1c1c27"/><stop offset="1" stop-color="#444254"/></linearGradient>
+  <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5c5a70"/><stop offset=".48" stop-color="#262733"/><stop offset="1" stop-color="#11141e"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8b1cc"/><stop offset="1" stop-color="#6c6a86"/></linearGradient>
+  <linearGradient id="cushion" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#151520"/><stop offset=".56" stop-color="#373643"/><stop offset="1" stop-color="#161720"/></linearGradient>
+  <filter id="shadow"><feGaussianBlur stdDeviation="13"/></filter>
+</defs>
+<ellipse cx="214" cy="338" rx="118" ry="19" fill="#5c5272" opacity=".22" filter="url(#shadow)"/>
+<g transform="rotate(-8 210 191)">
+  <path d="M105 213 V144 C105 68 149 29 210 29s105 39 105 115v70" fill="none" stroke="#2b2c39" stroke-width="48" stroke-linecap="round"/>
+  <path d="M105 213 V144 C105 68 149 29 210 29s105 39 105 115v70" fill="none" stroke="url(#headband)" stroke-width="38" stroke-linecap="round"/>
+  <path d="M129 87 C154 32 262 29 291 91" fill="none" stroke="#bbb5c8" opacity=".3" stroke-width="5" stroke-linecap="round"/>
+  <path d="M124 198v-53 M297 198v-53" stroke="url(#metal)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M116 160v55 M307 160v55" stroke="#161722" stroke-width="7" stroke-linecap="round"/>
+  <rect x="78" y="168" width="79" height="154" rx="33" fill="#14151f"/>
+  <rect x="85" y="171" width="67" height="150" rx="30" fill="url(#shell)"/>
+  <rect x="94" y="178" width="51" height="137" rx="26" fill="url(#cushion)"/>
+  <path d="M112 186 C100 203 101 278 116 304" fill="none" stroke="#a39eae" stroke-width="4" opacity=".5"/>
+  <path d="M137 188 C150 205 150 288 136 308" fill="none" stroke="#11121c" stroke-width="8" opacity=".7"/>
+  <rect x="266" y="168" width="83" height="156" rx="34" fill="#11131c"/>
+  <rect x="274" y="172" width="69" height="147" rx="29" fill="url(#shell)"/>
+  <rect x="282" y="181" width="52" height="128" rx="25" fill="#1b1b28" stroke="#616074" stroke-width="4"/>
+  <rect x="290" y="186" width="36" height="119" rx="18" fill="url(#cushion)"/>
+  <path d="M289 195 C294 179 317 179 325 195" fill="none" stroke="#858397" stroke-width="2" opacity=".5"/>
+  <path d="M270 240q-14 14 0 30" fill="none" stroke="#9c94d5" stroke-width="3" opacity=".8"/>
+</g>
+</svg>

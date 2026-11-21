@@ -1,0 +1,27 @@
+# Dependencies and builds
+node_modules/
+dist/
+.vite/
+.cache/
+
+# Browser test outputs generated during each execution
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Local environment configuration
+.env
+.env.*
+!.env.example
+
+# Editor / operating system noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*
+
+# Reproducibility evidence in evidence/ is intentionally tracked.
